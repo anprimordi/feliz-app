@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorBackground" format="reference|color" />
+    <attr name="colorComponentDefault" format="reference|color" />
+    <attr name="colorComponentDisable" format="reference|color" />
+    <attr name="colorDivider" format="reference|color" />
+    <attr name="colorTextPrimary" format="reference|color" />
+    <attr name="colorTextPrimaryInverse" format="reference|color" />
+    <attr name="colorTextSecondary" format="reference|color" />
+    <attr name="colorTextSecondaryInverse" format="reference|color" />
+</resources>

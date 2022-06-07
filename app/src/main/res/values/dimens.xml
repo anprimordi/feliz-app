@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xl">36dp</dimen>
+    <dimen name="margin_xxl">48dp</dimen>
+
+    <dimen name="banner_slider_normal">4dp</dimen>
+    <dimen name="banner_slider_checked">5dp</dimen>
+    <dimen name="banner_slider_page_margin">8dp</dimen>
+    <dimen name="banner_reveal_width">8dp</dimen>
+
+    <!--    default banner slider page margin = 15dp-->
+    <!--    default banner reveal width = 10-->
+
+    <dimen name="elevation_low">2dp</dimen>
+    <dimen name="elevation_medium">4dp</dimen>
+    <dimen name="elevation_high">6dp</dimen>
+
+    <dimen name="corner_small">4dp</dimen>
+    <dimen name="corner_medium">8dp</dimen>
+    <dimen name="corner_large">12dp</dimen>
+    <dimen name="corner_oval">20dp</dimen>
+    <dimen name="corner_oval_large">24dp</dimen>
+
+    <dimen name="space_splash_logo_bottom">128dp</dimen>
+    <dimen name="width_item_product_portfolio_thumbnail">240dp</dimen>
+    <dimen name="height_item_product_portfolio_thumbnail">192dp</dimen>
+    <dimen name="height_product_category_price_list_thumbnail">192dp</dimen>
+    <dimen name="margin_product_date">11dp</dimen>
+    <dimen name="margin_statement_letter_signature">80dp</dimen>
+    <dimen name="wide_vendor_category_thumbnail_162dp">162dp</dimen>
+    <dimen name="height_home_vendor_item_thumbnail">80dp</dimen>
+    <dimen name="width_home_vendor_item_thumbnail">128dp</dimen>
+    <dimen name="width_product_category_price_list_thumbnail">300dp</dimen>
+    <dimen name="height_search_item">200dp</dimen>
+</resources>

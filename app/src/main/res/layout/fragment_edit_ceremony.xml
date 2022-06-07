@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.feliz.apps.presentation.ui.form.edit.FormEditViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_large"
+        android:paddingVertical="@dimen/margin_medium"
+        tools:context=".presentation.ui.form.edit.staff.ceremony.EditCeremonyFragment">
+
+        <!--      Marriage Contract Staff      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_marriage_contract_staff_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/title_marriage_contract_staff"
+            android:textAllCaps="true" />
+
+        <!--      Holy Text Reader Staff      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_holy_text_reader_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_quran_reader"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_holy_text_reader"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_holy_text_reader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_fullname"
+                android:inputType="textPersonName"
+                android:text="@={viewModel.quranReaderObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--      Best Man Staff      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_best_man_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_best_man"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_best_man_reader"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_best_man_reader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_fullname"
+                android:inputType="textPersonName"
+                android:text="@={viewModel.groomWitnessObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--      Maid of Honor Staff      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_maid_of_honor_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_maid_of_honor"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_maid_of_honor_reader"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_maid_of_honor_reader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_fullname"
+                android:inputType="textPersonName"
+                android:text="@={viewModel.brideWitnessObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--      MC Staff      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_mc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_mc"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_mc_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_mc_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_fullname"
+                android:inputType="textPersonName"
+                android:text="@={viewModel.mcObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.feliz.apps.presentation.ui.form.edit.FormEditViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_large"
+        android:paddingVertical="@dimen/margin_medium">
+
+        <!--      Event Support      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_event_support_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/title_event_support"
+            android:textAllCaps="true" />
+
+        <!--      Spouse Car Rental      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_wedding_car_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_spouse_car"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_wedding_car_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_wedding_car_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:hint="@string/hint_wedding_car_name"
+                android:inputType="text"
+                android:singleLine="true"
+                android:text="@={viewModel.carObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--      Usher Service      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_usher_service_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_usher_service"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_usher_service_plan"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/edit_usher_service_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_user_service_select_plan"
+                android:inputType="none"
+                android:paddingHorizontal="@dimen/margin_medium"
+                android:text="@={viewModel.usherVendorObservable}"
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--      Invitation Typing      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_invitation_typing_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_invitation_typing"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_invitation_typing_amount"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_invitation_typing_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_invitation_typing_amount"
+                android:inputType="number"
+                android:text="@={viewModel.invitationAmountObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--      Courier      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_courier_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_courier"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_courier_amount"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/edit_courier_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_courier_amount"
+                android:inputType="none"
+                android:padding="@dimen/margin_medium"
+                android:text="@={viewModel.courierObservable}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--      Other Note      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_other_note_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_other"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_other_note"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:hint="@string/hint_other_note">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_other_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:text="@={viewModel.etcObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</layout>

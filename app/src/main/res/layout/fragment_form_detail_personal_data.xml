@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:paddingVertical="@dimen/margin_medium"
+            tools:context=".presentation.ui.form.detail.tab.FormRegisterPersonalInfoFragment">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_personal_info_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_client_personal_info"
+                android:textAllCaps="true" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_client_fullname_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_client_fullname"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_client_fullname_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_client_fullname" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_client_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Angga Permadi" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_client_note_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_note" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_client_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="@tools:sample/lorem/random" />
+
+            <!--      Spouse Name      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_spouse_fullname_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_spouse_fullname"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_groom_fullname_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_groom_fullname" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_groom_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Angga Permadi, M.Pd." />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_bride_fullname_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_bride_fullname" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_bride_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Alvira Paramita" />
+
+            <!--      Groom Parent Name      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_groom_parent_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_groom_parent_name"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_groom_father_fullname_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_father_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_groom_father_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Anam Permadi" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_groom_mother_fullname_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_mother_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_groom_mother_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Dwi Anggi" />
+
+            <!--      Bride Parent Name      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_bride_parent_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_bride_parent_name"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_bride_father_fullname_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_father_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_bride_father_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Lt. Devin Reine, Purn" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_bride_mother_fullname_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_mother_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_bride_mother_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Rika Paramita" />
+
+            <!--      Groom Family Name      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_groom_family_member_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_groom_family_member_name"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_groom_family_member_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_family_member" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_groom_family_member_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Monoceros Caeli" />
+
+            <!--      Bride Family Name      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_bride_family_member_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_bride_family_member_name"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_bride_family_member_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_family_member" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_bride_family_member_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Monoceros Caeli" />
+
+            <!--      Borderline      -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:background="@color/grey" />
+
+            <!--      Wedding Staffs      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_wedding_staff_list_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_wedding_staff_list"
+                android:textAllCaps="true" />
+
+            <!--      Family Coordinator      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_family_coordinator_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_family_coordinator"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_family_coordinator_name_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_coordinator_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_family_coordinator_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Diluc Ragvindr" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_family_coordinator_phone_number_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_phone_number" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_family_coordinator_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="+6281234452912" />
+
+            <!--      Usher Coordinator      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_usher_coordinator_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_usher_coordinator"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_usher_coordinator_name_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_coordinator_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_usher_coordinator_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Jean Gunhildr" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_usher_coordinator_phone_number_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_phone_number" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_usher_coordinator_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="+6281234452912" />
+
+            <!--      VIP Coordinator      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_vip_coordinator_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_vip_coordinator"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_vip_coordinator_name_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_coordinator_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_vip_coordinator_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Kaeya Alberich" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_vip_coordinator_phone_number_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_phone_number" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_vip_coordinator_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="+6281234452912" />
+
+            <!--      Present Coordinator      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_present_coordinator_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_present_coordinator"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_present_coordinator_name_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_coordinator_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_present_coordinator_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Mona Megistus" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_present_coordinator_phone_number_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_phone_number" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_present_coordinator_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="+6281234452912" />
+
+            <!--      Souvenir Coordinator      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_souvenir_coordinator_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_souvenir_coordinator"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_souvenir_coordinator_name_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_coordinator_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_souvenir_coordinator_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Albedo Mordin" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_souvenir_coordinator_phone_number_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_phone_number" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_souvenir_coordinator_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="+6281234452912" />
+
+            <!--      Usher Staff      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_usher_staff_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_usher_staff"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_usher_staff_name_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_staff_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_usher_staff_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Owen Smith" />
+
+            <!--      Guest Attendance Booking Staff      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_guest_booking_staff_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_guest_booking_staff"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_guest_booking_staff_name_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_staff_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_guest_booking_staff_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Karl Rock" />
+
+            <!--      Souvenir Staff      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_souvenir_staff_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_souvenir_staff"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_souvenir_staff_name_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_staff_name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_souvenir_staff_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="John Paul Jones" />
+
+            <!--      Borderline      -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:background="@color/grey" />
+
+            <!--      Wedding Ceremonial Staff      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_wedding_ceremonial_staff_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_marriage_contract_staff"
+                android:textAllCaps="true" />
+
+            <!--      Quran Reader Staff      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_quran_reader_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_quran_reader"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_quran_reader_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_fullname" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_quran_reader_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Barbara Paige" />
+
+            <!--      Best Man Staff      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_best_man_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_best_man"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_best_man_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_fullname"
+                tools:ignore="TooManyViews" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_best_man_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Barney Jackson" />
+
+            <!--      Maid of Honor Staff      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_maid_of_honor_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_maid_of_honor"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_maid_of_honor_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_fullname" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_maid_of_honor_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Hana Edelweiss" />
+
+            <!--      MC Staff      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_mc_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_mc"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_mc_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_fullname"
+                tools:ignore="TooManyViews" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_mc_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Jason Hudson" />
+
+            <!--      Tausyiah      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_tausyiah_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_tausyiah"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_tausyiah_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_fullname"
+                tools:ignore="TooManyViews" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_tausyiah_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Menendez" />
+
+            <!--      Prayer      -->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_prayer_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:text="@string/title_prayer"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_prayer_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_fullname"
+                tools:ignore="TooManyViews" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_prayer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:layout_marginBottom="@dimen/margin_xxl"
+                android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                tools:text="Rosaria" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

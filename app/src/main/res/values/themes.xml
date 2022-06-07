@@ -1,0 +1,56 @@
+<resources>
+
+    <style name="Theme.FelizApps" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryVariant">@color/orange</item>
+        <item name="colorPrimaryDark">?attr/colorPrimaryVariant</item>
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/orange</item>
+        <item name="colorAccent">?attr/colorSecondary</item>
+        <item name="colorError">@color/red</item>
+
+        <item name="colorDivider">@color/black</item>
+        <item name="colorTextPrimary">@android:color/black</item>
+        <item name="colorTextPrimaryInverse">@color/white</item>
+        <item name="colorTextSecondary">@color/black</item>
+        <item name="colorTextSecondaryInverse">@color/white</item>
+
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColorPrimary">?attr/colorTextPrimary</item>
+        <item name="android:textColorPrimaryInverse">?attr/colorTextPrimaryInverse</item>
+        <item name="android:textColorSecondary">?attr/colorTextSecondary</item>
+        <item name="android:textColorSecondaryInverse">?attr/colorTextSecondaryInverse</item>
+
+        <item name="textAppearanceHeadline1">@style/TextAppearance.FelizApps.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.FelizApps.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.FelizApps.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.FelizApps.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.FelizApps.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MaterialComponents.Headline6
+        </item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.FelizApps.Body</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.FelizApps.Body</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.FelizApps.Small1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.FelizApps.Small2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.FelizApps.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.FelizApps.Caption</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Widget.FelizApps.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
+        <item name="titleTextColor">@color/black</item>
+        <item name="titleTextAppearance">@style/TextAppearance.MaterialComponents.Headline6</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.MaterialComponents.Subtitle1
+        </item>
+    </style>
+
+    <style name="ThemeOverlay.App.Toolbar" parent="">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
+    </style>
+</resources>

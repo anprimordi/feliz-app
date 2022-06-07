@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.feliz.apps.presentation.ui.form.edit.FormEditViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_large"
+        android:paddingVertical="@dimen/margin_medium"
+        tools:context=".presentation.ui.form.edit.personal.client.EditClientFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_client_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/title_client_personal_info"
+            android:textAllCaps="true" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_client_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_client_personal_info"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_client_fullname"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FelizApps.TextField.Rounded">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_client_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_client_fullname"
+                android:inputType="textPersonName"
+                android:text="@={viewModel.clientFullnameObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_client_note"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FelizApps.TextField.Rounded">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_client_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:hint="@string/hint_note"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:text="@={viewModel.clientDescriptionObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_spouse_fullname_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_spouse_fullname"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_groom_fullname"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FelizApps.TextField.Rounded">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_groom_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_groom_fullname"
+                android:inputType="textPersonName"
+                android:text="@={viewModel.groomFullnameObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_bride_fullname"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FelizApps.TextField.Rounded">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_bride_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_bride_fullname"
+                android:inputType="textPersonName"
+                android:text="@={viewModel.brideFullnameObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.feliz.apps.presentation.ui.form.edit.FormEditViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_large"
+        android:paddingVertical="@dimen/margin_medium">
+
+        <!--      Event Support      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_event_support_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/title_event_support"
+            android:textAllCaps="true" />
+
+        <!--      Lighting Effect      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_lighting_effect_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_lighting_effect"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_lighting_effect_plan"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/edit_lighting_effect_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_select_plan"
+                android:inputType="none"
+                android:paddingHorizontal="@dimen/margin_medium"
+                android:text="@={viewModel.lightingObservable}"
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--      Generator      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_generator_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_generator"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_generator_plan"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/edit_generator_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_select_plan"
+                android:inputType="none"
+                android:paddingHorizontal="@dimen/margin_medium"
+                android:text="@={viewModel.generatorObservable}"
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--      Sound System      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_sound_system_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_sound_system"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_sound_system_plan"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/edit_sound_system_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_select_plan"
+                android:inputType="none"
+                android:paddingHorizontal="@dimen/margin_medium"
+                android:text="@={viewModel.soundSystemObservable}"
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--      Multimedia      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_multimedia_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_multimedia"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_multimedia_plan"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/edit_multimedia_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_select_plan"
+                android:inputType="none"
+                android:paddingHorizontal="@dimen/margin_medium"
+                android:text="@={viewModel.multimediaObservable}"
+                android:textAppearance="?attr/textAppearanceSubtitle1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_small">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardPreventCornerOverlap="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FelizApps.Card.Rounded">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_thumbnail"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:contentDescription="@string/image_general"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FelizApps.Card.Rounded"
+                tools:layout_height="128dp"
+                tools:layout_width="128dp"
+                tools:src="@drawable/bmp_sample" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.FelizApps.Body"
+            app:layout_constraintEnd_toEndOf="@id/card_thumbnail"
+            app:layout_constraintStart_toStartOf="@id/card_thumbnail"
+            app:layout_constraintTop_toBottomOf="@id/card_thumbnail"
+            tools:text="@tools:sample/lorem" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

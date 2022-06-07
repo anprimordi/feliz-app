@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/wide_vendor_category_thumbnail_162dp"
+            android:layout_margin="@dimen/margin_small"
+            android:contentDescription="@string/image_general"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.FelizApps.Card.Rounded"
+            tools:src="@drawable/bmp_sample" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_item_vendor_category"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/margin_small"
+            android:paddingVertical="@dimen/margin_small"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.FelizApps.Body"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/image_thumbnail"
+            app:layout_constraintEnd_toEndOf="@id/image_thumbnail"
+            app:layout_constraintStart_toStartOf="@id/image_thumbnail"
+            tools:text="@tools:sample/lorem" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

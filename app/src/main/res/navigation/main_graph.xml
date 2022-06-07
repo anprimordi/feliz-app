@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.feliz.apps.presentation.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_vendorFragment"
+            app:destination="@id/vendorFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_companyProfileFragment"
+            app:destination="@id/companyProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.feliz.apps.presentation.ui.home.HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_companyProfileFragment"
+            app:destination="@id/companyProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_productFragment"
+            app:destination="@id/productCategoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_homeSearchFragment"
+            app:destination="@id/homeSearchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_portfolioFragment"
+            app:destination="@id/portfolioFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_vendorDetailFragment"
+            app:destination="@id/vendorDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_upcomingEventListFragment"
+            app:destination="@id/upcomingEventListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_finishedEventListFragment"
+            app:destination="@id/finishedEventListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vendorFragment"
+        android:name="com.feliz.apps.presentation.ui.vendor.VendorFragment"
+        tools:layout="@layout/fragment_vendor">
+        <action
+            android:id="@+id/action_vendorFragment_to_vendorListFragment"
+            app:destination="@id/vendorListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formFragment"
+        android:name="com.feliz.apps.presentation.ui.form.login.FormLoginFragment"
+        tools:layout="@layout/fragment_form_login">
+        <action
+            android:id="@+id/action_formFragment_to_formDetailFragment"
+            app:destination="@id/formDetailFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/companyProfileFragment"
+        android:name="com.feliz.apps.presentation.ui.home.companyprofile.CompanyProfileFragment"
+        android:label="CompanyProfileFragment" />
+    <fragment
+        android:id="@+id/productCategoryFragment"
+        android:name="com.feliz.apps.presentation.ui.home.product.list.ProductListFragment"
+        android:label="fragment_product_category"
+        tools:layout="@layout/fragment_product_list">
+        <action
+            android:id="@+id/action_productCategoryFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_productCategoryFragment_self"
+            app:destination="@id/productCategoryFragment" />
+        <argument
+            android:name="productCategoryId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.feliz.apps.presentation.ui.home.product.detail.ProductDetailFragment"
+        android:label="ProductFragment">
+        <action
+            android:id="@+id/action_productFragment_self"
+            app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_productFragment_to_portfolioFragment"
+            app:destination="@id/portfolioFragment" />
+        <argument
+            android:name="productId"
+            app:argType="long" />
+        <argument
+            android:name="productCategoryId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/portfolioFragment"
+        android:name="com.feliz.apps.presentation.ui.home.portfolio.detail.PortfolioFragment"
+        android:label="fragment_portfolio"
+        tools:layout="@layout/fragment_portfolio">
+        <argument
+            android:name="portfolioId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_portfolioFragment_self"
+            app:destination="@id/portfolioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vendorListFragment"
+        android:name="com.feliz.apps.presentation.ui.vendor.list.VendorListFragment"
+        tools:layout="@layout/fragment_vendor_list">
+        <action
+            android:id="@+id/action_vendorListFragment_to_vendorDetailFragment"
+            app:destination="@id/vendorDetailFragment" />
+        <argument
+            android:name="vendorCategoryId"
+            app:argType="long" />
+        <argument
+            android:name="vendorCategoryName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/vendorDetailFragment"
+        android:name="com.feliz.apps.presentation.ui.vendor.detail.VendorDetailFragment"
+        tools:layout="@layout/fragment_vendor_detail">
+        <argument
+            android:name="vendorId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_vendorDetailFragment_self"
+            app:destination="@id/vendorDetailFragment" />
+        <argument
+            android:name="vendorCategoryId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeSearchFragment"
+        android:name="com.feliz.apps.presentation.ui.home.search.SearchFragment">
+        <action
+            android:id="@+id/action_homeSearchFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_homeSearchFragment_to_portfolioFragment"
+            app:destination="@id/portfolioFragment" />
+        <action
+            android:id="@+id/action_homeSearchFragment_to_vendorDetailFragment"
+            app:destination="@id/vendorDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formDetailFragment"
+        android:name="com.feliz.apps.presentation.ui.form.detail.FormDetailFragment">
+        <action
+            android:id="@+id/action_formDetailFragment_to_formEditFragment"
+            app:destination="@id/formEditFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="clientId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_formDetailFragment_to_formFragment"
+            app:destination="@id/formFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formEditFragment"
+        android:name="com.feliz.apps.presentation.ui.form.edit.FormEditFragment">
+        <argument
+            android:name="clientId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_formEditFragment_to_formDetailFragment"
+            app:destination="@id/formDetailFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/formDetailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/upcomingEventListFragment"
+        android:name="com.feliz.apps.presentation.ui.home.portfolio.list.upcoming.UpcomingEventListFragment"
+        android:label="fragment_upcoming_event_list"
+        tools:layout="@layout/fragment_upcoming_event_list">
+        <action
+            android:id="@+id/action_upcomingEventListFragment_to_portfolioFragment"
+            app:destination="@id/portfolioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishedEventListFragment"
+        android:name="com.feliz.apps.presentation.ui.home.portfolio.list.finished.FinishedEventListFragment"
+        android:label="fragment_finished_event_list"
+        tools:layout="@layout/fragment_finished_event_list">
+        <action
+            android:id="@+id/action_finishedEventListFragment_to_portfolioFragment"
+            app:destination="@id/portfolioFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.feliz.apps.presentation.ui.vendor.detail.VendorDetailViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--        swipe refresh-->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+                <!--            main layout-->
+                <LinearLayout
+                    android:id="@+id/layout_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="128dp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <com.zhpan.bannerview.BannerViewPager
+                        android:id="@+id/bvp_thumbnails"
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/grey"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_category"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Venue" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Headline2"
+                            tools:text="Wedding Planner Package" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_small"
+                            android:drawableStart="@drawable/ic_baseline_location_on_24"
+                            android:drawablePadding="@dimen/margin_small"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@string/text_product_budget"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                            tools:text="Jalan Cakrawala - Universitas Negeri Malang" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_location_space_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_large"
+                        android:text="@string/title_location_wide"
+                        android:textAppearance="@style/TextAppearance.FelizApps.Headline3"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_location_space"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:visibility="gone"
+                        tools:text="@tools:sample/lorem" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_facility_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_large"
+                        android:text="@string/title_facility"
+                        android:textAppearance="@style/TextAppearance.FelizApps.Headline3" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_facility"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_small"
+                        tools:text="@tools:sample/lorem" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_capacity_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_large"
+                        android:text="@string/title_capacity"
+                        android:textAppearance="@style/TextAppearance.FelizApps.Headline3" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_capacity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_small"
+                        tools:text="@tools:sample/lorem" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_room_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_large"
+                        android:text="@string/title_room"
+                        android:textAppearance="@style/TextAppearance.FelizApps.Headline3"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_room"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_tiny"
+                        android:text="@string/text_product_portfolio_subtitle"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_more_vendor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_large"
+                        android:text="@string/text_vendor_detail_more_vendor"
+                        android:textAppearance="@style/TextAppearance.FelizApps.Headline3" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_more_product_category_subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_tiny"
+                        android:text="@string/text_more_vendor_subtitle" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_more_vendor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:layout_marginBottom="@dimen/margin_large"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/margin_small"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_interact"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/button_navigate_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:contentDescription="@string/image_general"
+                android:src="@drawable/ic_round_navigate_up"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/appbar_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_direction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_marginVertical="@dimen/margin_medium"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:onClick="@{()-> viewModel.triggerOpenDirection()}"
+                android:text="@string/action_direction"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_outline_direction_24"
+                app:iconGravity="textStart"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.FelizApps.Card.Rounded" />
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <!--            error on loading layout-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_loading_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_loading_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                android:drawablePadding="@dimen/margin_medium"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:textAlignment="center"
+                app:drawableTopCompat="@drawable/img_search_not_found"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/lorem/random" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_swipe_to_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plain_swipe_to_refresh"
+                app:layout_constraintEnd_toEndOf="@id/text_loading_error"
+                app:layout_constraintStart_toStartOf="@id/text_loading_error"
+                app:layout_constraintTop_toBottomOf="@id/text_loading_error" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

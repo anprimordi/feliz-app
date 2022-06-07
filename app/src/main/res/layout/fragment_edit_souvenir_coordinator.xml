@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.feliz.apps.presentation.ui.form.edit.FormEditViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_large"
+        android:paddingVertical="@dimen/margin_medium"
+        tools:context=".presentation.ui.form.edit.staff.souvenir.EditSouvenirCoordinatorFragment">
+
+        <!--      Wedding Staffs      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_wedding_staff_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/title_wedding_staff_list"
+            android:textAllCaps="true" />
+
+        <!--      Souvenir Coordinator      -->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_souvenir_coordinator_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_souvenir_coordinator"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_souvenir_coordinator_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_souvenir_coordinator_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_fullname"
+                android:inputType="textPersonName"
+                android:text="@={viewModel.souvenirCoNameObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_souvenir_coordinator_phone_number"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:counterEnabled="true"
+            app:counterMaxLength="11"
+            app:prefixText="0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_souvenir_coordinator_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title_phone_number_0xx"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:text="@={viewModel.souvenirCoPhoneObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_usher_staff_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/title_usher_staff"
+            android:textAppearance="@style/TextAppearance.FelizApps.Headline4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/field_staff_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FelizApps.TextField.Rounded">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_staff_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_fullname"
+                android:inputType="textPersonName"
+                android:text="@={viewModel.usherStaffNameObservable}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--        <com.google.android.material.button.MaterialButton-->
+        <!--            android:id="@+id/button_add_staff"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginVertical="@dimen/margin_medium"-->
+        <!--            android:text="@string/action_add_staff" />-->
+    </LinearLayout>
+</layout>

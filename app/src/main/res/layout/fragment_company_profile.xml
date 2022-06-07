@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.feliz.apps.presentation.ui.home.companyprofile.CompanyProfileContract.Presenter" />
+
+        <variable
+            name="view"
+            type="com.feliz.apps.presentation.ui.home.companyprofile.CompanyProfileContract.View" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                style="@style/Widget.FelizApps.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Company Profile">
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+                <LinearLayout
+                    android:id="@+id/layout_company_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/margin_xxl"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/image_company_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/image_general"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_company" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_company_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:text="@string/plain_feliz_organizer"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_company_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        tools:maxLines="4"
+                        tools:text="@tools:sample/lorem/random" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_vision_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_xl"
+                        android:text="@string/title_vision"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_vision_body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        tools:maxLines="3"
+                        tools:text="@tools:sample/lorem/random" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_mission_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_xl"
+                        android:text="@string/title_mission"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_mission_body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        tools:maxLines="3"
+                        tools:text="@tools:sample/lorem/random" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_contact_us"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_xl">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_contact_us"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/title_contact_us"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/image_instagram"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:contentDescription="@string/image_general"
+                            android:onClick="@{() -> view.openInstagramPage()}"
+                            android:src="@drawable/ic_company_instagram"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_contact_us" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_instagram"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:onClick="@{() -> view.openInstagramPage()}"
+                            android:text="@string/title_instagram"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                            app:layout_constraintEnd_toEndOf="@id/image_instagram"
+                            app:layout_constraintStart_toStartOf="@id/image_instagram"
+                            app:layout_constraintTop_toBottomOf="@id/image_instagram" />
+
+                        <ImageView
+                            android:id="@+id/image_whatsapp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:contentDescription="@string/image_general"
+                            android:onClick="@{() -> viewModel.triggerEventOpenWhatsappPage()}"
+                            android:src="@drawable/ic_company_whatsapp"
+                            app:layout_constraintEnd_toStartOf="@id/image_youtube"
+                            app:layout_constraintStart_toEndOf="@id/image_instagram"
+                            app:layout_constraintTop_toBottomOf="@id/text_contact_us" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_whatsapp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:onClick="@{() -> viewModel.triggerEventOpenWhatsappPage()}"
+                            android:text="@string/title_whatsapp"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                            app:layout_constraintEnd_toEndOf="@id/image_whatsapp"
+                            app:layout_constraintStart_toStartOf="@id/image_whatsapp"
+                            app:layout_constraintTop_toBottomOf="@id/image_whatsapp" />
+
+                        <ImageView
+                            android:id="@+id/image_youtube"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:contentDescription="@string/image_general"
+                            android:onClick="@{() -> viewModel.triggerEventOpenYouTubePage()}"
+                            android:src="@drawable/ic_company_youtube"
+                            app:layout_constraintEnd_toStartOf="@id/image_email"
+                            app:layout_constraintStart_toEndOf="@id/image_whatsapp"
+                            app:layout_constraintTop_toBottomOf="@id/text_contact_us" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_youtube"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:onClick="@{() -> viewModel.triggerEventOpenYouTubePage()}"
+                            android:text="@string/title_youtube"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                            app:layout_constraintEnd_toEndOf="@id/image_youtube"
+                            app:layout_constraintStart_toStartOf="@id/image_youtube"
+                            app:layout_constraintTop_toBottomOf="@id/image_youtube" />
+
+                        <ImageView
+                            android:id="@+id/image_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:layout_marginEnd="@dimen/margin_medium"
+                            android:contentDescription="@string/image_general"
+                            android:onClick="@{() -> viewModel.triggerEventOpenEmail()}"
+                            android:src="@drawable/ic_company_email"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_contact_us" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{() -> viewModel.triggerEventOpenEmail()}"
+                            android:text="@string/title_email"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                            app:layout_constraintEnd_toEndOf="@id/image_email"
+                            app:layout_constraintStart_toStartOf="@id/image_email"
+                            app:layout_constraintTop_toBottomOf="@id/image_email" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_xl"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_our_team_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_our_team"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_view_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/plain_view_more"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/text_our_team_title" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_teams"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            android:paddingHorizontal="@dimen/margin_small"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            app:layout_constraintTop_toBottomOf="@id/text_our_team_title"
+                            tools:listitem="@layout/item_company_team" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <!--            error on loading layout-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_loading_error"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_loading_error"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_large"
+                    android:drawablePadding="@dimen/margin_medium"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:textAlignment="center"
+                    app:drawableTopCompat="@drawable/img_search_not_found"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@tools:sample/lorem/random" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_swipe_to_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plain_swipe_to_refresh"
+                    app:layout_constraintEnd_toEndOf="@id/text_loading_error"
+                    app:layout_constraintStart_toStartOf="@id/text_loading_error"
+                    app:layout_constraintTop_toBottomOf="@id/text_loading_error" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

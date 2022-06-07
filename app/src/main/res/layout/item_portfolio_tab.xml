@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_portfolio"
+            android:layout_width="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:layout_height="wrap_content"
+            app:cardPreventCornerOverlap="false"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FelizApps.Card.Rounded">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_portfolio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/image_thumbnail"
+                    android:layout_width="330dp"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FelizApps.Card.TopRounded.Oval"
+                    tools:src="@drawable/bmp_sample" />
+
+                <LinearLayout
+                    android:id="@+id/layout_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_small"
+                    android:background="@drawable/bg_portfolio_date"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/margin_medium"
+                    android:paddingVertical="@dimen/margin_small"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/image_thumbnail"
+                    app:layout_constraintTop_toBottomOf="@id/image_thumbnail">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_date_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAppearance="@style/TextAppearance.FelizApps.Headline3"
+                        tools:text="29" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_date_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                        tools:text="Jan" />
+
+                </LinearLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.FelizApps.Headline3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layout_date"
+                    app:layout_constraintTop_toTopOf="@id/layout_date"
+                    tools:text="Andi and Sara" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_product_date"
+                    android:drawableStart="@drawable/ic_baseline_location_on_24"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_date"
+                    app:layout_constraintEnd_toEndOf="@id/text_name"
+                    app:layout_constraintStart_toEndOf="@id/layout_date"
+                    tools:text="Graha Cakrawala" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</layout>

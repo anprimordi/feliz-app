@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.feliz.apps.domain.model.Portfolio" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_product_portfolio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            app:cardPreventCornerOverlap="false"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.FelizApps.Card.Rounded">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/image_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_item_product_portfolio_thumbnail"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FelizApps.Card.TopRounded.Oval"
+                    tools:src="@drawable/bmp_sample" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_location"
+                    android:layout_width="0dp"
+                    android:drawablePadding="@dimen/margin_tiny"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/margin_tiny"
+                    android:drawableStart="@drawable/ic_round_location_white_24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/image_thumbnail"
+                    app:layout_constraintStart_toStartOf="@id/image_thumbnail"
+                    tools:text="Malang" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:textAppearance="@style/TextAppearance.FelizApps.Body"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/image_thumbnail"
+                    tools:text="Annie and Donnie" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_product"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/text_name"
+                    app:layout_constraintStart_toStartOf="@id/text_name"
+                    app:layout_constraintTop_toBottomOf="@id/text_name"
+                    tools:text="Wedding package" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</layout>

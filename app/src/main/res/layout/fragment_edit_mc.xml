@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.feliz.apps.presentation.ui.form.edit.FormEditViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/margin_large"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_xxl">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_vendor_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/title_vendor_list"
+                android:textAllCaps="true" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_mc_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:text="@string/title_mc_vendor"
+                android:textAppearance="@style/TextAppearance.FelizApps.Headline3" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_vendor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_edit_vendor" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_add_vendor"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/margin_xxl"
+                android:text="@string/action_add_vendor"
+                android:textAllCaps="false"
+                android:textColor="@color/green"
+                app:backgroundTint="@color/grey"
+                app:icon="@drawable/ic_round_add_circle_24"
+                app:iconTint="@color/green" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

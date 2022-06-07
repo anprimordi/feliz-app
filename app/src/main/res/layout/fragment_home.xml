@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.feliz.apps.presentation.ui.home.HomeContract.View" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                style="@style/Widget.FelizApps.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:menu="@menu/menu_home_search"
+                app:title="@null">
+
+                <ImageView
+                    android:id="@+id/image_app_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image_general"
+                    android:src="@drawable/ic_home_logo" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+                <LinearLayout
+                    android:id="@+id/layout_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="128dp"
+                    android:visibility="gone"
+                    tools:context=".presentation.ui.home.HomeFragment"
+                    tools:visibility="visible">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_app_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:text="@string/title_app_name"
+                        android:textAppearance="@style/TextAppearance.FelizApps.Headline2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text_app_jargon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="@string/plain_app_jargon" />
+
+                    <com.zhpan.bannerview.BannerViewPager
+                        android:id="@+id/bvp_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="@dimen/margin_large" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/button_company_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_medium"
+                        android:layout_marginVertical="@dimen/margin_large"
+                        android:backgroundTint="@color/white"
+                        android:elevation="8dp"
+                        android:onClick="@{() -> view.openCompanyProfilePage()}"
+                        android:text="@string/plain_company_profile"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_our_product"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_home_our_product"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_our_product_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:text="@string/title_our_product"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Headline3" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_our_product_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/plain_our_services" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_our_product"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:clipToPadding="false"
+                            android:paddingHorizontal="@dimen/margin_small"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            app:spanCount="3" />
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_upcoming_event"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_xl">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_upcoming_event_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_upcoming_event"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Headline3"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_upcoming_event_see_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_medium"
+                            android:onClick="@{() -> view.openUpcomingEventPage()}"
+                            android:text="@string/plain_see_all"
+                            android:textColor="@android:color/holo_blue_light"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_upcoming_event_title"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/text_upcoming_event_title" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_upcoming_event_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/title_upcoming_event_subtitle"
+                            app:layout_constraintStart_toStartOf="@id/text_upcoming_event_title"
+                            app:layout_constraintTop_toBottomOf="@id/text_upcoming_event_title" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_upcoming_event"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/margin_small"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintTop_toBottomOf="@id/text_upcoming_event_description" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_finished_event"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_xl"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_finished_event_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_finished_event"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Headline3"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_finished_event_see_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_medium"
+                            android:onClick="@{()-> view.openFinishedEventPage()}"
+                            android:text="@string/plain_see_all"
+                            android:textColor="@android:color/holo_blue_light"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/text_finished_event_title"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/text_finished_event_title" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_finished_event_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/title_finished_event_subtitle"
+                            app:layout_constraintStart_toStartOf="@id/text_finished_event_title"
+                            app:layout_constraintTop_toBottomOf="@id/text_finished_event_title" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_finished_event"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/margin_small"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintTop_toBottomOf="@id/text_finished_event_description" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_vendor_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <!--<LinearLayout
+                        android:id="@+id/layout_decoration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_xl"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_decoration_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_home_decoration"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Headline3" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_decoration_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_home_decoration_subtitle" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_decoration_event"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/margin_small"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_photographer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_xl"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_photographer_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_home_photography"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Headline3" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_photographer_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_home_photography_subtitle" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_photographer_event"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/margin_small"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_lighting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_xl"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_lighting_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_home_lighting"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Headline3" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_lighting_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_home_lighting_subtitle" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_lighting_event"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/margin_small"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_sound"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_xl"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_sound_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_sound_system"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Headline3" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_sound_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_home_sound_subtitle" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_sound_event"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/margin_small"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_makeup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_xl"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_makeup_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_home_makeup"
+                            android:textAppearance="@style/TextAppearance.FelizApps.Headline3" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_makeup_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_medium"
+                            android:text="@string/title_home_makeup_subtitle" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_makeup_event"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/margin_small"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    </LinearLayout>-->
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_loading_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_loading_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                android:drawablePadding="@dimen/margin_medium"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:textAlignment="center"
+                app:drawableTopCompat="@drawable/img_search_not_found"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/lorem/random" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_swipe_to_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plain_swipe_to_refresh"
+                app:layout_constraintEnd_toEndOf="@id/text_loading_error"
+                app:layout_constraintStart_toStartOf="@id/text_loading_error"
+                app:layout_constraintTop_toBottomOf="@id/text_loading_error" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/margin_large"
+        android:paddingVertical="@dimen/margin_medium"
+        tools:context=".presentation.ui.form.detail.tab.statement.FormRegisterStatementFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_statement_letter_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/title_statement_letter"
+            android:textAllCaps="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_statement_letter_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xxl"
+            android:text="@string/plain_statement_letter_content"
+            android:textAppearance="@style/TextAppearance.FelizApps.Body"
+            app:layout_constraintTop_toBottomOf="@id/text_statement_letter_title" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical"
+            android:layout_width="@dimen/wide_vendor_category_thumbnail_162dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_approval_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.FelizApps.Body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_horizontal"
+            tools:text="Malang, 11 Maret 2021" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_client_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_statement_letter_signature"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.FelizApps.Body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+            app:layout_constraintTop_toBottomOf="@id/text_approval_date"
+            tools:text="( Nama Klien )" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_client_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/plain_as_client"
+            app:layout_constraintEnd_toEndOf="@id/text_client_name"
+            app:layout_constraintTop_toBottomOf="@id/text_client_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_feliz_representative_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.FelizApps.Body"
+            app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_client_name"
+            tools:text="( Nama Perwakilan Feliz )" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_feliz_representative_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:gravity="center"
+            android:text="@string/plain_as_feliz_representative"
+            app:layout_constraintStart_toStartOf="@id/text_feliz_representative_name"
+            app:layout_constraintTop_toBottomOf="@id/text_client_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
